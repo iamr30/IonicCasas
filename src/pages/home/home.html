@@ -1,17 +1,20 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      Ionic Blank
+      Bienes Raices
     </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  <ion-card *ngFor="let casa of casas">
+  <ion-card *ngFor="let casa of casas" (click)="info(casa)">
     <!-- {{ nombre | json}} -->
     <img *ngIf="casa.ad.hasOwnProperty('thumbnail')" src='https://img.segundamano.mx/medium/{{casa.ad.thumbnail.path}}'>
     <ion-card-header *ngIf="casa.ad.hasOwnProperty('list_price')">
       {{ casa.ad.list_price.label }}
     </ion-card-header>
+    <ion-card-content *ngIf="casa.ad.hasOwnProperty('subject')">
+      {{ casa.ad.subject }}
+    </ion-card-content>
   </ion-card>
 </ion-content>
