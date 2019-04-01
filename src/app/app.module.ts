@@ -8,12 +8,14 @@ import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { HttpClientModule } from '@angular/common/http';
 import { InfoPage } from '../pages/info/info';
+import { BuscarPage } from '../pages/buscar/buscar';
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
-    InfoPage
+    InfoPage,
+    BuscarPage
   ],
   imports: [
     BrowserModule,
@@ -24,7 +26,8 @@ import { InfoPage } from '../pages/info/info';
   entryComponents: [
     MyApp,
     HomePage,
-    InfoPage
+    InfoPage,
+    BuscarPage
   ],
   providers: [
     StatusBar,
