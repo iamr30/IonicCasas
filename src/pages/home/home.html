@@ -15,13 +15,12 @@
 
 <ion-content padding>
   <ion-card *ngFor="let casa of casas" (click)="info(casa)">
-    <!-- {{ nombre | json}} -->
-    <img *ngIf="casa.ad.hasOwnProperty('thumbnail')" src='https://img.segundamano.mx/medium/{{casa.ad.thumbnail.path}}'>
-    <ion-card-header *ngIf="casa.ad.hasOwnProperty('list_price')">
-      {{ casa.ad.list_price.label }}
+    <ion-card-header>
+      {{casa.titulo}}
     </ion-card-header>
-    <ion-card-content *ngIf="casa.ad.hasOwnProperty('subject')">
-      {{ casa.ad.subject }}
+    <ion-card-content >
+      ${{casa.precio}}
+      {{casa.municipio}}, {{casa.colonia}}
     </ion-card-content>
   </ion-card>
 </ion-content>

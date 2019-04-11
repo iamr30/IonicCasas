@@ -11,31 +11,27 @@
 </ion-header>
 
 <ion-content padding>
-  <ion-slides pager>
-
-    <ion-slide *ngFor="let imagen of casa.ad.images">
-      <img src='https://img.segundamano.mx/medium/{{imagen.path}}'>
-    </ion-slide>
-  </ion-slides>
-
-  <ion-content padding>
-    <ion-card-content *ngIf="casa.ad.hasOwnProperty('body')">
-      Descripcion: {{ casa.ad.body }}
-    </ion-card-content>
-
-    <ion-card-content *ngIf="casa.ad.hasOwnProperty('list_price')">
-      Precio: {{ casa.ad.list_price.label }}
-    </ion-card-content>
-
-    <ion-card-content *ngIf="casa.ad.hasOwnProperty('ad_details')">
-      <p *ngIf="casa.ad.ad_details.hasOwnProperty('bathrooms')"> Baños: {{casa.ad.ad_details.bathrooms.single.label}} </p>
-      <p *ngIf="casa.ad.ad_details.hasOwnProperty('lot_area')"> M2: {{casa.ad.ad_details.lot_area.single.label}} </p>
-      <p *ngIf="casa.ad.ad_details.hasOwnProperty('rooms')"> Cuartos: {{casa.ad.ad_details.rooms.single.label}} </p>
-    </ion-card-content>
-
-  </ion-content>
-    
-  
-  
-
+  <ion-card-header>
+      Descripcion: {{casa.descripcion}}
+  </ion-card-header>
+  <ion-card-content>
+    <p>
+        Precio: ${{casa.precio}}
+    </p>
+    <p>
+        Ubicacion: {{casa.municipio}}, {{casa.colonia}}
+    </p>
+    <p>
+        Baños: {{casa.baths}}
+    </p>
+    <p>
+        M2: {{casa.m2}}
+    </p>
+    <p>
+        Cuartos: {{casa.rooms}}
+    </p>
+    <p>
+        Espacios estacionamiento: {{casa.cars}}
+    </p>
+  </ion-card-content>
 </ion-content>

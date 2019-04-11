@@ -14,14 +14,12 @@
 <ion-content padding>
   <ion-list>
     <ion-item *ngFor="let casa of casas">
-      <ion-thumbnail item-start>
-        <img *ngIf="casa.ad.hasOwnProperty('thumbnail')" src='https://img.segundamano.mx/medium/{{casa.ad.thumbnail.path}}'>
-      </ion-thumbnail>
-      <h2 *ngIf="casa.ad.hasOwnProperty('list_price')">
-        {{ casa.ad.list_price.label }}
+      <h2>
+        {{casa.titulo}}
       </h2>
-      <p *ngIf="casa.ad.hasOwnProperty('subject')">
-        {{ casa.ad.subject }}
+      <p>
+        ${{casa.precio}}
+        {{casa.municipio}}, {{casa.colonia}}
       </p>
       <button ion-button clear item-end (click)="info(casa)">Ver</button>
     </ion-item>

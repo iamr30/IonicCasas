@@ -14,10 +14,11 @@ export class HomePage {
   buscarPage = BuscarPage;
 
   constructor(public navCtrl: NavController, public http: HttpClient) {
-    this.http.get('/v1/klfst?&category=1040&region=16&lang=es&lim=15')
+    this.http.get('v1/api/v1/casas')
     .subscribe( data => {
       console.log(JSON.stringify(data));
-      this.casas = data['list_ads'];
+      this.casas = data;
+      console.log(JSON.stringify(this.casas));
     }, error => {
       console.log(JSON.stringify(error));
     });
